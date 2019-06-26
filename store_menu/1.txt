@@ -1,0 +1,3 @@
+Americano,50000
+Caffe Latte,20000
+Caffe Mocha,30000

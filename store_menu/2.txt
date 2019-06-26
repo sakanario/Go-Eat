@@ -1,0 +1,4 @@
+Egg Burger,10000
+Beef Burger,12000
+Cheeseburger,31000
+Mc Nugget,32500
