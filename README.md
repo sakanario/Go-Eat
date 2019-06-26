@@ -36,6 +36,11 @@ The main file is run.rb that requiere back_end/logic.rb for it class and back_en
 All the logic about map, driver location, user location, and store location stored on class Map. <br />
 The app creates log.txt (replace log.txt if exist) for keeping history.
 
+
+## Bug
+
+The app suppose to delete log.txt when exit, but sometimes it error(access denied).
+
 ## Note 
 
 The app display work best when the map size is (10*10).

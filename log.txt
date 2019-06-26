@@ -1,12 +1,1 @@
 History
-
-2019-06-26 16:54:54 +0700
-Nama Toko : Mac Donald
-
-Product's Name	Amount	Price
-
-Egg Burger	2	10000
-
-------------------------------
-Delivery fee		51000
-Total			71000
