@@ -43,7 +43,9 @@ The app suppose to delete log.txt when exit, but sometimes it error(access denie
 
 ## Note 
 
-The app display work best when the map size is (10*10).
+The app display work best when the map size is (10*10). <br /><br />
+Importan!<br />
+Always **use fullscreen window** when use [Show Map] fiture.
 
 
 Repository Link : 
