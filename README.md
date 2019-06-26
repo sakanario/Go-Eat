@@ -22,8 +22,8 @@ second and third is user location.
 <br />
 
 ## Assumption
-Map is open world and consist with user, driver, and store that build on n*n 2D cartesius diagram.
-
+Map is open world and consist with user, driver, and store that build on n*n 2D cartesius diagram.<br />
+The Delivery fee is 300 per unit distance.
 ## App Design
 The main file is run.rb that requiere back_end/logic.rb for it class and back_end/module.rb for it module.<br />
 All the logic about map, driver location, user location, and store location stored on class Map. <br />

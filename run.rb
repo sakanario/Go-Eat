@@ -50,7 +50,7 @@ while x.to_i != 4
         menu = menu_toko(y)
         
         #ongkos kirim
-        ongkir =  peta.closest_driver(y) * 3000
+        ongkir =  peta.closest_driver(y) * 300
 
         #menu in the picked store
         z = 0
