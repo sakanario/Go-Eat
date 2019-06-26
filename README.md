@@ -12,9 +12,7 @@ ruby run.rb
 
 or simply click run.rb
 <br /><br />
-The app can run with argument too: 
-<br /><br />
-To run with argument
+The app can run with argument too : 
 ```
 ruby run.rb 20 15 2
 ```
