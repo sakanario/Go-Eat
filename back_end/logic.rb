@@ -2,9 +2,9 @@ require_relative 'module'
 include Go
 
 class Map
-    def initialize(length,width)
-        @length = length
-        @width = width
+    def initialize(n=20,x=nil,y=nil)
+        @length = n
+        @width = n
         @map = Hash.new {[:empty]}
         @driver = Hash.new{[:empty]}
         @store = Hash.new{[:empty]}
@@ -12,10 +12,10 @@ class Map
         @driver_name = Hash.new
         @driver_rating = Hash.new{[0,0]}
 
-    
+        
+        self.user_location(@map,x,y)
         self.driver_location
         self.store_location(@map)
-        self.user_location(@map)
     end
 
     def to_market(x1,y1,x2,y2)
@@ -230,16 +230,21 @@ class Map
         total
     end
 
-    def user_location(map)
+    def user_location(map,x=nil,y=nil)
         @map = map
-        @count = 1
-        until @count == 2
-            i = rand(1..@length)
-            j = rand(1..@width)
-            if map[[i,j]] == [:empty]
-                map[[i,j]] = "U"
-                @user["Your Location"] = [i,j]
-                @count += 1
+        if(x != nil && y != nil)
+            @map[[x,y]] = "U"
+            @user["Your Location"] = [x,y]
+        else
+            @count = 1
+            until @count == 2
+                i = rand(1..@length)
+                j = rand(1..@width)
+                if map[[i,j]] == [:empty]
+                    map[[i,j]] = "U"
+                    @user["Your Location"] = [i,j]
+                    @count += 1
+                end
             end
         end
     end

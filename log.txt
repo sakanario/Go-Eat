@@ -1,0 +1,12 @@
+History
+
+2019-06-26 16:12:58 +0700
+Nama Toko : Mac Donald
+
+Product's Name	Amount	Price
+
+Cheeseburger	1	31000
+
+------------------------------
+Delivery fee		21000
+Total			52000

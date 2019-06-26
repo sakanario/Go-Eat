@@ -3,12 +3,20 @@ require_relative 'back_end/module'
 include Go
 File.open("log.txt", "w") { |f| f.write "History\n" }
 
-peta = Map.new(20,20)
+#initialize map 
+v1 = ARGV[0].to_i
+v2 = ARGV[1].to_i
+v3 = ARGV[2].to_i
+peta = Map.new(v1,v2,v3)
+ARGV.clear
+
+# p ARGV
+# peta = Map.new(10,1,1)
 
 puts "Welcome at Go-Eat"
 sleep(0.1)
 
-#initialize
+#initialize hash for keeping order
 order = Hash.new
 
 # nama toko
