@@ -17,9 +17,9 @@ The app can run with argument too :
 ruby run.rb 20 15 2
 ```
 
-first argument (n, for instance) is the size of the generated map (n*n)
+first argument (n, for instance) is the size of the generated map (n*n),
 <br />
-second and third is user location 
+second and third is user location. 
 <br />
 
 ## Assumption
