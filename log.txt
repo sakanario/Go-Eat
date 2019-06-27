@@ -1,1 +1,23 @@
 History
+
+2019-06-27 19:38:09 +0700
+Nama Toko : Stark Buck
+
+Product's Name	Amount	Price
+
+Americano	1	50000
+
+------------------------------
+Delivery fee		4800
+Total			54800
+
+2019-06-27 19:38:21 +0700
+Nama Toko : Stark Buck
+
+Product's Name	Amount	Price
+
+Americano	2	50000
+
+------------------------------
+Delivery fee		4800
+Total			104800

@@ -42,6 +42,21 @@ module Go
         menu
     end
 
+    def ask_driver_rating
+        cek = false
+            while cek == false
+                puts "\nHow Driver performance? "
+                print "Rating : "
     
+                rate = gets.chomp.to_i
+                if (rate < 1 || rate > 5)
+                    puts "give rating 1 - 5!"
+                else
+                    cek = true
+                end
+            end
+        rate
+    end
+
 
 end

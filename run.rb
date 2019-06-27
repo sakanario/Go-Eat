@@ -27,7 +27,7 @@ store = inisiasi_toko()
 # main program
 x = 0
 while x.to_i != 4
-    #hapus driver rating jelek
+    #hapus driver dgn rating jelek
     peta.bad_driver
 
     puts "\nMenu : "
@@ -46,7 +46,7 @@ while x.to_i != 4
         print "\nChoose menu : "
         y = gets.chomp.to_i
 
-        #import menu
+        #generate toko's menu
         menu = menu_toko(y)
         
         #ongkos kirim
@@ -60,15 +60,15 @@ while x.to_i != 4
             availible_item(menu)
     
             print "\nChoose menu : "
-            pick = gets.chomp
+            pick = gets.chomp.to_i
             
             #asking amount
             print "amount of the item : "
-            temp = gets.chomp
-            amount["#{menu[pick.to_i-1][0]}"] = amount["#{menu[pick.to_i-1][0]}"] + temp.to_i
+            temp = gets.chomp.to_i
+            amount["#{menu[pick.to_i-1][0]}"] = amount["#{menu[pick.to_i-1][0]}"] + temp
 
             #keeping order
-            order["#{menu[pick.to_i-1][0]}"] = [ menu[pick.to_i-1][1] , amount["#{menu[pick.to_i-1][0]}"] ]
+            order["#{menu[pick-1][0]}"] = [ menu[pick-1][1] , amount["#{menu[pick-1][0]}"] ]
             
             #asking if_done
             puts "\n1. Add more item\n2. Finish the order"
@@ -93,18 +93,8 @@ while x.to_i != 4
         # perjalanan driver
         peta.journey(y)
 
-        cek = false
-        while cek == false
-            puts "\nHow Driver performance? "
-            print "Rating : "
-
-            rate = gets.chomp.to_i
-            if (rate < 1 || rate > 5)
-                puts "give rating 1 - 5!"
-            else
-                cek = true
-            end
-        end
+        # Give driver a rating
+        rate = ask_driver_rating()
 
         # rating the driver
         peta.rating(rate)

@@ -134,7 +134,7 @@ class Map
         @driver_rating[@active_diver][0] += 1
 
         #total point
-        @driver_rating[@active_diver][1] = val.to_f
+        @driver_rating[@active_diver][1] += val.to_f
     end
 
     def show_driver_rating
@@ -165,14 +165,17 @@ class Map
         count = 0
         @driver_rating.each do |key,val|
             if val[0] > 0
-                if (val[1].to_i/val[0]).to_f < 3
-                    #delete rating
-                    @driver_rating.delete(key)
+                if (val[1].to_i/val[0]).to_f < 3.0
                     #delete from map
-                    
                     @map[@driver[key]] = [:empty]
+                    
                     #delete metadata
+                    print "meta data : #{@driver [key]}\n"
                     @driver.delete(key)
+
+                    #delete rating
+                    print "driver rating : #{@driver_rating[key]}\n" 
+                    @driver_rating.delete(key)
                 end
             end
         end
