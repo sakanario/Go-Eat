@@ -1,24 +1,29 @@
+
 Route
 
-Driver Name : Rock Lee Order to : Stark Buck
-
-driver is on the way to store, start at (8,4)
-go to (8,5)
-go to (8,6)
-go to (8,7)
-go to (8,8)
-go to (8,9)
-go to (8,10)
-go to (8,11)
-go to (7,11), driver arrived at the store!
-driver has bought the item(s), start at (7,11)
-go to (8,11)
-go to (9,11)
-go to (10,11)
-go to (11,11)
-go to (12,11)
-go to (13,11)
-go to (14,11)
-go to (15,11)
-go to (16,11)
-go to (17,11), driver arrived at your place!
+2019-06-27 21:21:15 +0700
+Driver Name : Naruto Uzumaki
+Order to : Dankind Donuts
+driver is on the way to store, start at (6,11)
+go to (6,12)
+go to (6,13)
+go to (6,14)
+go to (6,15)
+go to (6,16)
+go to (6,17)
+go to (6,18)
+go to (6,19)
+go to (6,20)
+go to (5,20)
+go to (4,20)
+go to (3,20)
+go to (2,20), driver arrived at the store!
+driver has bought the item(s), start at (2,20)
+go to (2,19)
+go to (2,18)
+go to (2,17)
+go to (3,17)
+go to (4,17)
+go to (5,17)
+go to (6,17)
+go to (7,17), driver arrived at your place!

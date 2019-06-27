@@ -1,13 +1,15 @@
+
 History
 
-2019-06-27 21:04:05 +0700
-2019-06-27 21:04:09 +0700
-Nama Toko : Stark Buck
-
+2019-06-27 21:21:21 +0700
+Nama Toko : Dankind Donuts
 Product's Name	Amount	Price
 
-Americano	1	50000
+Banana Donat	3	8500
+
+
+Pumkin Donat	1	8500
 
 ------------------------------
-Delivery fee		5400
-Total			55400
+Delivery fee		6300
+Total			40300

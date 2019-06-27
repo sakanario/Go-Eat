@@ -1,8 +1,8 @@
 require_relative 'back_end/logic'
 require_relative 'back_end/module'
 include Go
-File.open("log.txt", "w") { |f| f.write "History\n" }
-File.open("route.txt", "w") { |f| f.write "Route\n" }
+File.open("log.txt", "w") { |f| f.write "\nHistory\n" }
+File.open("route.txt", "w") { |f| f.write "\nRoute\n" }
 
 #initialize map 
 if ARGV.empty?
@@ -114,10 +114,20 @@ while x.to_i != 4
         File.open("log.txt", "a") { |f| f.write "\nTotal\t\t\t#{total + ongkir}\n" }
 
     when 3
-        #membuka file log.txt
-        file = File.open("log.txt")
-        file_data = file.read
-        puts file_data
+        puts "\n1. Transaction history\n2. Driver History"
+        print "\nChoose menu : "
+        v = gets.chomp.to_i
+        if v == 1
+            #membuka file log.txt
+            file = File.open("log.txt")
+            file_data = file.read
+            puts file_data
+        elsif v == 2
+            #membuka file route.txt
+            file = File.open("route.txt")
+            file_data = file.read
+            puts file_data
+        end
     when 4 
         puts "Program Exited, Bye!"
     else

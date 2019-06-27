@@ -126,7 +126,7 @@ class Map
     end
 
     def journey(store_code,store_name)
-        File.open("log.txt", "a") { |f| f.write "\n#{Time.now}" }
+        File.open("route.txt", "a") { |f| f.write "\n#{Time.now}" }
         File.open("route.txt", "a") { |f| f.write "\nDriver Name : #{@driver_name[@active_diver]}" }
         File.open("route.txt", "a") { |f| f.write "Order to : #{store_name}" }
 
@@ -342,13 +342,6 @@ class Map
     end
     
     def display
-        self.show_user_location
-        puts "\nDriver location"
-        self.show_driver_location
-        puts ""
-        puts "Store location"
-        self.show_store_location
-        
         # 2D Map Simulation
         print "    "
         for j in 1..@width do
@@ -385,6 +378,14 @@ class Map
             print "|\n"
         end
         print "_" * (51 * (@width.to_f/10))
+
+        puts "\n\n"
+        self.show_user_location
+        puts "\nDriver location"
+        self.show_driver_location
+        puts ""
+        puts "Store location"
+        self.show_store_location
     end
 
     def looking_driver
