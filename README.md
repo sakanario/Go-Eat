@@ -1,5 +1,5 @@
 # Go-Eat
-Gp-Eat is a command line program to order food.
+Go-Eat is a command line program to order food.
 
 
 ## Getting Started
@@ -33,7 +33,7 @@ The Delivery fee is 300 per unit distance.
 ## App Design
 The main file is run.rb that requiere back_end/logic.rb for it class and back_end/module.rb for it module.<br />
 All the logic about map, driver location, user location, and store location stored on class Map. <br />
-The app creates log.txt (replace log.txt if exist) for keeping history. <br />
+The app creates log.txt and route.txt (replace if exist) for keeping history. <br />
 The app uses sleep function to make the app more realistic.
 
 
@@ -42,11 +42,11 @@ The app suppose to delete log.txt when exit, but sometimes it error(access denie
 
 
 ## Note 
-The app display work best when the map size is (10*10). <br /><br />
 
 Importan!<br />
-Always **use fullscreen window** when use [Show Map] fiture.
+Always **use fullscreen window** when use [Show Map] fiture.<br/>
 
+This readme.md file looks better if when viewed through github website.
 
 Repository Link : 
 https://github.com/sakanario/Go-Eat
