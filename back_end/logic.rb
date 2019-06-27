@@ -297,21 +297,31 @@ class Map
     end
 
     def show_driver_location
+        c = 1
         @driver.each do|key,value|
-            puts "#{key} : (#{value[0]},#{value[1]})"
+            
+            puts "#{key} (D#{c})\t\t: (#{value[0]},#{value[1]})"
+            c += 1
         end
     end
 
     def show_store_location
         # print @store
+        c = 1
         @store.each do|key,value|
-            puts "#{key} : (#{value[0]},#{value[1]})"
+            # puts key.length
+            if key.length < 11 
+                puts "#{key} (S#{c})\t\t: (#{value[0]},#{value[1]})"
+            else
+                puts "#{key} (S#{c})\t: (#{value[0]},#{value[1]})"
+            end
+            c +=1
         end
     end
 
     def show_user_location
         @user.each do|key,value|
-            puts "#{key} : #{value[0]},#{value[1]}"
+            puts "#{key} (U)\t: (#{value[0]},#{value[1]})"
         end
     end
     
@@ -324,23 +334,41 @@ class Map
         self.show_store_location
         
         # 2D Map Simulation
+        print "    "
         for j in 1..@width do
-            print "    #{j}\t"
+            if j > 9
+                print "#{j}   "
+                
+            else
+                print "#{j}    "
+                
+            end
         end
         puts ''
         for i in 1..@length do
-            print "_" * (81 * (@width.to_f/10))
+            print "_" * (51 * (@width.to_f/10))
             puts ""
-            print "#{i}"
+
+            if i < 10
+                print " #{i}"
+            else
+                print "#{i}"
+            end
+
             for j in 1..@width do
                 if @map[[i,j]] == [:empty]
-                    print "|\t"
+                    print "|    "
                 else
-                    print "|  #{@map[[i,j]]}\t"
+                    if @map[[i,j]] == "U"
+                        print "| #{@map[[i,j]]}  "
+                    else
+                        print "| #{@map[[i,j]]} "
+                    end
                 end
             end
-            print "\n"
+            print "|\n"
         end
+        print "_" * (51 * (@width.to_f/10))
     end
 
     def looking_driver
