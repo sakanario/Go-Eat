@@ -2,6 +2,7 @@ require_relative 'back_end/logic'
 require_relative 'back_end/module'
 include Go
 File.open("log.txt", "w") { |f| f.write "History\n" }
+File.open("route.txt", "w") { |f| f.write "Route\n" }
 
 #initialize map 
 if ARGV.empty?
@@ -91,7 +92,7 @@ while x.to_i != 4
         peta.looking_driver
 
         # perjalanan driver
-        peta.journey(y)
+        peta.journey(y,store[y-1])
 
         # Give driver a rating
         rate = ask_driver_rating()

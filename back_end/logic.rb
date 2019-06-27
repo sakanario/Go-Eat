@@ -21,6 +21,8 @@ class Map
     def to_market(x1,y1,x2,y2)
 
         print "\ndriver is on the way to store, start at (#{x2},#{y2})"
+        File.open("route.txt", "a") { |f| f.write "\ndriver is on the way to store, start at (#{x2},#{y2})" }
+        
         sleep(0.1)
         # vertikal
         until y2 == y1
@@ -33,10 +35,13 @@ class Map
             end
 
             print "\ngo to (#{x2},#{y2})"
+            File.open("route.txt", "a") { |f| f.write "\ngo to (#{x2},#{y2})"}
             sleep(0.1)
 
             if (x2 == x1 && y2 == y1)
                 puts "driver arrived at the store!"
+                File.open("route.txt", "a") { |f| f.write "driver arrived at the store!"}
+                
                 sleep(0.1)
 
             end
@@ -52,10 +57,13 @@ class Map
             end
             
             print "\ngo to (#{x2},#{y2})"
+            File.open("route.txt", "a") { |f| f.write "\ngo to (#{x2},#{y2})" }
+
             sleep(0.1)
 
             if (x2 == x1 && y2 == y1)
                 puts ", driver arrived at the store!"
+                File.open("route.txt", "a") { |f| f.write ", driver arrived at the store!" }
                 sleep(0.1)
 
             end
@@ -66,7 +74,9 @@ class Map
 
     def to_user(x1,y1,x2,y2)
 
-        print "driver has bought the item(s), start at(#{x2},#{y2})"
+        print "driver has bought the item(s), start at (#{x2},#{y2})"
+        File.open("route.txt", "a") { |f| f.write "\ndriver has bought the item(s), start at (#{x2},#{y2})" }
+
         sleep(0.1)
 
         # vertikal
@@ -80,10 +90,12 @@ class Map
             end
 
             print "\ngo to (#{x2},#{y2})"
+            File.open("route.txt", "a") { |f| f.write "\ngo to (#{x2},#{y2})" }
             sleep(0.1)
 
             if (x2 == x1 && y2 == y1)
                 puts ", driver arrived at your place!"
+                File.open("route.txt", "a") { |f| f.write ", driver arrived at your place!" }
                 sleep(0.1)
 
             end
@@ -99,10 +111,12 @@ class Map
             end
             
             print "\ngo to (#{x2},#{y2})"
+            File.open("route.txt", "a") { |f| f.write "\ngo to (#{x2},#{y2})" }
             sleep(0.1)
 
             if (x2 == x1 && y2 == y1)
                 puts ", driver arrived at your place!"
+                File.open("route.txt", "a") { |f| f.write ", driver arrived at your place!" }
                 sleep(0.1)
             end
             # @x2 = x2
@@ -111,7 +125,11 @@ class Map
         # @map[[x2,y2]] = "D#{@count}"
     end
 
-    def journey(store_code)
+    def journey(store_code,store_name)
+        File.open("log.txt", "a") { |f| f.write "\n#{Time.now}" }
+        File.open("route.txt", "a") { |f| f.write "\nDriver Name : #{@driver_name[@active_diver]}" }
+        File.open("route.txt", "a") { |f| f.write "Order to : #{store_name}" }
+
         # toko's kordinat 
         @help =  @store.to_a 
         x1 = @help[store_code-1][1][0]
@@ -170,11 +188,9 @@ class Map
                     @map[@driver[key]] = [:empty]
                     
                     #delete metadata
-                    print "meta data : #{@driver [key]}\n"
                     @driver.delete(key)
 
                     #delete rating
-                    print "driver rating : #{@driver_rating[key]}\n" 
                     @driver_rating.delete(key)
                 end
             end
